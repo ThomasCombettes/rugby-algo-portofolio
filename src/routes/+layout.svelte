@@ -1,28 +1,24 @@
 <script lang="ts">
 	import '../app.postcss';
 	import { AppShell, AppBar, Drawer } from '@skeletonlabs/skeleton';
-	import TopBar from './appbar.svelte';
-	import TabBar from './tabbar.svelte';
 	import { initializeStores, getDrawerStore } from '@skeletonlabs/skeleton';
-	import Tabbar from './tabbar.svelte';
 
-	initializeStores();
-
-	function drawerOpen() {
-		drawerStore.open({});
-	}
-
-	const drawerStore = getDrawerStore();
+	import { ListBox, ListBoxItem , AppRail, AppRailTile, AppRailAnchor} from '@skeletonlabs/skeleton';
+			let valueSingle = "0"
+			let currentTile = valueSingle;
 </script>
+<!-- src/routes/__layout.svelte -->
+
 
 <!-- App Shell -->
+
 <AppShell>
 	<svelte:fragment slot="header">
 		<!-- App Bar -->
 
 		<AppBar gridColumns="grid-cols-3" slotDefault="place-self-center" slotTrail="place-content-end">
 			<svelte:fragment slot="lead">
-				<button class="lg:hidden btn btn-sm mr-4" on:click={drawerOpen}>
+				<button class="lg:hidden btn btn-sm mr-4">
 					<strong class="text-xl uppercase">Menu</strong>
 				</button>
 			</svelte:fragment>
@@ -52,19 +48,26 @@
 	</svelte:fragment>
 
 	<!--  Tab  Bar -->
-	<svelte:fragment slot="sidebarLeft">
-			<!--  
-				<Drawer class="lg:hidden btn btn-sm mr-4">
-					<TabBar />
-				</Drawer>
-				
-				Tab  Bar -->
-				<Tabbar />
+	<svelte:fragment slot="sidebarLeft">	
+		<nav>
+			<li>
+				<p> ------------------------------------- </p>
+			</li>
+			<li>
+				<a href="/"> home </a>
+			</li>
+			<li>
+				<a href="/algos/dfs"> dfs</a>
+			</li>
+			<li>
+				<a href="/algos/bfs"> bfs</a>
+			</li>
+		</nav>
+
 	</svelte:fragment>
 
-	
 
-	<svelte:fragment slot="footer">Thomas Combettes</svelte:fragment>
+	
 	<!-- Page Route Content -->
 	<slot />
 </AppShell>

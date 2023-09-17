@@ -1,5 +1,1 @@
-<body>
-	<p>
-		test
-	</p>
-</body>
+<p> hello rugby </p>
