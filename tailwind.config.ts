@@ -15,7 +15,7 @@ export default {
 			themes: {
 				preset: [
 					{
-						name: 'vintage',
+						name: 'hamlindigo',
 						enhancements: true,
 					},
 				],

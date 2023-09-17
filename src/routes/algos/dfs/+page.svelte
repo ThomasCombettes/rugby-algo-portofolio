@@ -198,4 +198,3 @@ import { AppShell, AppBar } from "@skeletonlabs/skeleton";
 	<!-- (footer) -->
 </AppShell>
 
-<style>

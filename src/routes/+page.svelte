@@ -2,9 +2,21 @@
     import { CodeBlock } from "@skeletonlabs/skeleton";
 </script>
 
-<h1> 
-    page acceuil 
-</h1>
-<p> hello rugby </p>
 
-<CodeBlock language="html" code={`<div>This is meta</div>`}></CodeBlock>
+<div>
+    <h1 class="h1"> rugby algo </h1>
+    <p class="p"> de l'algo et du rugby</p> 
+    
+    <hr class="!border-t-4" />
+    
+    <CodeBlock language="html" code={`<div>This is meta</div>`}></CodeBlock>
+</div>
+
+
+<style>
+    div{
+        margin: 100px;
+        border-color: red;
+        border-width: 5px;
+    }
+</style>

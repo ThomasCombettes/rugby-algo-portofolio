@@ -4,17 +4,26 @@
 	import { initializeStores, getDrawerStore } from '@skeletonlabs/skeleton';
 	import hljs from 'highlight.js';
 	import 'highlight.js/styles/github-dark.css';
+	import { LightSwitch } from '@skeletonlabs/skeleton';
 
+	import { TreeView, TreeViewItem, type TreeViewNode } from '@skeletonlabs/skeleton';
 	import { storeHighlightJs } from '@skeletonlabs/skeleton';
 
-storeHighlightJs.set(hljs);
+	storeHighlightJs.set(hljs);
 
-	import { ListBox, ListBoxItem , AppRail, AppRailTile, AppRailAnchor} from '@skeletonlabs/skeleton';
-			let valueSingle = "0"
-			let currentTile = valueSingle;
+	import {
+		ListBox,
+		ListBoxItem,
+		AppRail,
+		AppRailTile,
+		AppRailAnchor
+	} from '@skeletonlabs/skeleton';
+	let valueSingle = '0';
+	let currentTile = valueSingle;
+	import { Avatar } from '@skeletonlabs/skeleton';
 </script>
-<!-- src/routes/__layout.svelte -->
 
+<!-- src/routes/__layout.svelte -->
 
 <!-- App Shell -->
 
@@ -23,22 +32,14 @@ storeHighlightJs.set(hljs);
 		<!-- App Bar -->
 
 		<AppBar gridColumns="grid-cols-3" slotDefault="place-self-center" slotTrail="place-content-end">
+			<h1 class="h1">rugby algo</h1>
+
 			<svelte:fragment slot="lead">
-				<button class="lg:hidden btn btn-sm mr-4">
-					<strong class="text-xl uppercase">Menu</strong>
-				</button>
+				<li>
+					<a href="/"> <Avatar  src="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> </a>
+				</li>
 			</svelte:fragment>
 
-			<h1 class="h1">
-				<span
-					class="bg-gradient-to-br from-pink-500 to-violet-500 bg-clip-text text-transparent box-decoration-clone"
-					>rugby</span
-				>
-				<span
-					class="bg-gradient-to-br from-red-500 to-yellow-500 bg-clip-text text-transparent box-decoration-clone"
-					>algo</span
-				>
-			</h1>
 			<svelte:fragment slot="trail"
 				><a
 					id="button-t-b"
@@ -48,32 +49,54 @@ storeHighlightJs.set(hljs);
 					rel="noreferrer"
 				>
 					github
-				</a></svelte:fragment
-			>
+				</a>
+				<LightSwitch />
+			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
 
 	<!--  Tab  Bar -->
-	<svelte:fragment slot="sidebarLeft">	
-		<nav>
-			<li>
-				<p> ------------------------------------- </p>
-			</li>
-			<li>
-				<a href="/"> home </a>
-			</li>
-			<li>
-				<a href="/algos/dfs"> dfs</a>
-			</li>
-			<li>
-				<a href="/algos/bfs"> bfs</a>
-			</li>
-		</nav>
+	<svelte:fragment slot="sidebarLeft">
+		<div class="tab-bar">
+			<TreeView>
+				<TreeViewItem href="/algos">
+					Algorithmes
+					<svelte:fragment slot="children">
+						<TreeViewItem>
+							<a href="/algos/dfs"> dfs</a>
+						</TreeViewItem>
+						<TreeViewItem>
+							<a href="/algos/bfs"> bfs</a>
+						</TreeViewItem>
+					</svelte:fragment>
+				</TreeViewItem>
+				<TreeViewItem>
+					<a href="/portfolio"> portfolio</a>
+				</TreeViewItem>
+			</TreeView>
 
+			<nav>
+				<li>
+					<a href="/"> home </a>
+				</li>
+				<li>
+					<a href="/algos/dfs"> dfs</a>
+				</li>
+				<li>
+					<a href="/algos/bfs"> bfs</a>
+				</li>
+			</nav>
+		</div>
 	</svelte:fragment>
 
-
-	
 	<!-- Page Route Content -->
 	<slot />
 </AppShell>
+
+<style>
+	.tab-bar {
+		padding: 100px;
+		border-color: red;
+		border-width: 5px;
+	}
+</style>
