@@ -2,6 +2,12 @@
 	import '../app.postcss';
 	import { AppShell, AppBar, Drawer } from '@skeletonlabs/skeleton';
 	import { initializeStores, getDrawerStore } from '@skeletonlabs/skeleton';
+	import hljs from 'highlight.js';
+	import 'highlight.js/styles/github-dark.css';
+
+	import { storeHighlightJs } from '@skeletonlabs/skeleton';
+
+storeHighlightJs.set(hljs);
 
 	import { ListBox, ListBoxItem , AppRail, AppRailTile, AppRailAnchor} from '@skeletonlabs/skeleton';
 			let valueSingle = "0"

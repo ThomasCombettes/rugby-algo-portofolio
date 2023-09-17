@@ -9,11 +9,7 @@ import { AppShell, AppBar } from "@skeletonlabs/skeleton";
     <svelte:fragment slot="header">
 
         <AppBar gridColumns="grid-cols-3" slotDefault="place-self-center" slotTrail="place-content-end">
-            <svelte:fragment slot="lead">
-                <button class="lg:hidden btn btn-sm mr-4">
-                <strong class="text-xl uppercase">Menu</strong>
-            </button>
-        </svelte:fragment>
+
 
         <h1 class="h1">
             <span
@@ -201,3 +197,5 @@ import { AppShell, AppBar } from "@skeletonlabs/skeleton";
 	<!-- (pageFooter) -->
 	<!-- (footer) -->
 </AppShell>
+
+<style>
